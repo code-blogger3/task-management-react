@@ -1,8 +1,18 @@
-import { useState } from 'react';
-import './App.css';
+import { useEffect, useState } from 'react';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+
 
 function App() {
-  return <></>;
+  const [isBoardModalOpen, setIsBoardModalOpen] = useState(false);
+  return(  <>
+  <Header
+  setIsBoardModalOpen={setIsBoardModalOpen}
+  isBoardModalOpen={isBoardModalOpen}
+/>
+  <Sidebar/>
+  </>)
 }
+  
 
 export default App;
