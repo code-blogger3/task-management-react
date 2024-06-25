@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import { useDispatch, useSelector } from 'react-redux';
+import EmptyBoard from './components/EmptyBoard';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   <Sidebar/>
 </>  :
 
-<head>hhh</head>
+<EmptyBoard type="add"/>
 }
 
   </>)

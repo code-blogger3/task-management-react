@@ -1,4 +1,7 @@
+The trim() method of String values removes whitespace from both ends of this string and returns a new string, without modifying the original string.
 initial: EmptyBoard type add - AddEditBoardModal
+Header
+
 Home :
  - Sidebar - AddEditBoardModal add , useDarkMode
  - Column 
