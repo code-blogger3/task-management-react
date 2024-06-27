@@ -1,5 +1,19 @@
 The trim() method of String values removes whitespace from both ends of this string and returns a new string, without modifying the original string.
 initial: EmptyBoard type add - AddEditBoardModal
+
+data model: ( [{}] => means array consisting objects )
+boards [{}]
+  - name
+  - isActive
+  - columns [{}]
+    - name
+    - tasks [{}]
+      - title
+      - description
+      - status
+      - subtasks [{}]
+        - title
+        - isCompleted
 Header
 
 Home :
@@ -126,3 +140,38 @@ useEffect(() => {
 - It then uses `useEffect` to attach a listener for the "resize" event on the window object.
 - When the window resizes, the `handleWindowResize` function updates the `windowSize` state with the new dimensions, keeping the component informed about the current screen size.
 - Finally, it ensures proper cleanup by removing the event listener when the component unmounts.
+
+
+
+
+This piece of code is a React JSX element with an `onClick` event handler. Here's a detailed explanation:
+
+### Code Breakdown
+```jsx
+<div onClick={(e) => {
+  if (e.target !== e.currentTarget) {
+    return;
+  }
+}}>
+</div>
+```
+
+1. **`<div>` Element**: This is a standard HTML `div` element, used here within a React component.
+
+2. **`onClick` Event Handler**: This attribute specifies a function to be executed when the `div` is clicked.
+
+3. **Arrow Function**: The `onClick` attribute is assigned an arrow function that takes an event object `e` as its argument. This event object contains information about the click event.
+
+4. **`if` Statement**: Inside the arrow function, there is a conditional statement:
+   - **`e.target`**: This represents the element that was clicked.
+   - **`e.currentTarget`**: This represents the element to which the event handler is attached (in this case, the `div`).
+
+5. **Condition**: The condition checks if `e.target` is not equal to `e.currentTarget`. In simpler terms, it checks if the clicked element is not the `div` itself but a child element of the `div`.
+
+6. **`return` Statement**: If the condition is true (i.e., the clicked element is a child of the `div`), the function returns immediately, effectively doing nothing.
+
+### Purpose
+The purpose of this code is to ensure that the click event handler only executes its intended logic when the `div` itself is clicked, and not when any of its child elements are clicked. 
+
+### Example Scenario
+Consider a scenario where the `div` contains other clickable elements like buttons or links. Without this check, clicking on any of those child elements would trigger the `onClick` event for the `div`. This code prevents that by returning early if the event originated from a child element.
